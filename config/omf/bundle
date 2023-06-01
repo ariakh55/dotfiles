@@ -1,0 +1,6 @@
+package bass
+package foreign-env
+package https://github.com/fabioantunes/fish-nvm
+package https://github.com/jhillyerd/plugin-git
+theme default
+theme lambda
