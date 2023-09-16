@@ -1,13 +1,13 @@
 # dotfiles
 
 Personal dotfiles for linux user **Sulfur Sashimi**
-This repo is inspired by [this](https://www.atlassian.com/git/tutorials/dotfiles)tutorial @atlassian!
+This repo is inspired by [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial @atlassian!
 
 ## Prerequisite
 Before using this dots there are simple things you need to do
 Install these package using whatever package manager on your favorite distro
 - tmux
-- fish shel
+- fish shell
 - htop
 - neofetch
 - neovim
@@ -35,3 +35,19 @@ git clone https://github.com/ariakh55/dotfiles.git
 Then using `cp` copy all of the dots to thier desitnation (EZ)
 
 __do not worry leading dot will make all files hidden__
+
+### Simpler Way
+It's a bit tricky but I promise it will get the job done even quicker 😀
+
+``` sh
+bash <(curl -Lks https://raw.githubusercontent.com/ariakh55/dotfiles/master/scripts/config-init.sh --install)
+```
+
+then using the created alias `dotconfig` checkout all configs
+
+``` sh
+dotconfig checkout
+```
+
+
+
