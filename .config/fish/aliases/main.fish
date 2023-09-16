@@ -1,0 +1,8 @@
+##nvimdiff
+alias vimdiff="nvim -d"
+
+##cava
+alias cava="TERM=xterm-256color /usr/bin/cava"
+
+##vim
+alias vim="nvim"

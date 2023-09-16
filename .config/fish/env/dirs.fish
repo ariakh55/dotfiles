@@ -1,0 +1,4 @@
+set SP_CONFIG $XDG_CONFIG_HOME
+set SP_PROJX $HOME/Projects
+set SP_ARCHIVE $HOME/archive
+set SP_NOTES $HOME/notes
