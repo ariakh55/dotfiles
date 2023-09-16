@@ -14,8 +14,20 @@ check_alias_exists() {
   fi
 }
 
+if [ "$1" == "--install" ] 
+then
+  git clone --bare https://github.com/ariakh55/dotfiles $REPO
+  $ALIAS_CMD sparse-checkout init --cone
+  echo "/*" > $REPO/info/sparse-checkout
+  echo "!README.md" >> $REPO/info/sparse-checkout
+  echo "!scripts/" >> $REPO/info/sparse-checkout
+  $ALIAS_CMD read-tree -mu HEAD
 
-git init --bare $REPO
+  echo "Repository cloned and configured with sparse-checkout."
+else
+  git init --bare $REPO
+  echo "Repository created."
+fi
 $ALIAS_CMD config --local status.showUntrackedFiles no
 check_alias_exists "$HOME/.bashrc" "${ALIAS}"
 
