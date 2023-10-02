@@ -2,7 +2,8 @@
 fish_add_path /home/sulfurchan/.spicetify
 
 ##linuxbrew
-fish_add_path /home/linuxbrew/.linuxbrew/bin
+fish_rm_path "/home/linuxbrew/.linuxbrew/bin" --slient
+set --export PATH $PATH "/home/linuxbrew/.linuxbrew/bin"
 
 ##NVIM_BIN
 fish_add_path $NVM_BIN
