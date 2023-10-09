@@ -1,9 +1,14 @@
 ## TMUX
 if status is-interactive
-and not set -q TMUX
-    exec tmux
+    if [ "$TERM_PROGRAM" = 'vscode' ]
+        echo "THIS IS VSCODE"
+    else if not set -q TMUX
+        exec tmux
+    end
+
     # Commands to run in interactive sessions can go here
 end
+
 
 ## STARTUP
 node --version && clear
