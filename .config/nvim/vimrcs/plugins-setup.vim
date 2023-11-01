@@ -12,12 +12,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 " Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 "Plug 'https://github.com/ctrlpvim/ctrlp.vim' " crtl + p for the win
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
@@ -39,6 +39,6 @@ source ~/.config/nvim/vimrcs/plug-config/git-gutter.vim
 source ~/.config/nvim/vimrcs/plug-config/airline.vim
 source ~/.config/nvim/vimrcs/plug-config/coc.vim
 "source ~/.config/nvim/vimrcs/plug-config/crtlp.vim
-"source ~/.config/nvim/vimrcs/plug-config/fzf.vim
+source ~/.config/nvim/vimrcs/plug-config/fzf.vim
 source ~/.config/nvim/vimrcs/plug-config/commenter.vim
 source ~/.config/nvim/vimrcs/plug-config/svelte.vim

@@ -92,8 +92,8 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+nmap <silent> <C-x> <Plug>(coc-range-select)
+xmap <silent> <C-x> <Plug>(coc-range-select)
 
 vmap <leader>kf  <Plug>(coc-format-selected)
 nmap <leader>kf  <Plug>(coc-format-selected)
