@@ -6,3 +6,6 @@ alias cava="TERM=xterm-256color /usr/bin/cava"
 
 ##vim
 alias vim="nvim"
+
+##bat
+alias bat="batcat"

@@ -5,7 +5,10 @@ fish_add_path /home/sulfurchan/.spicetify
 fish_rm_path "/home/linuxbrew/.linuxbrew/bin" --slient
 set --export PATH $PATH "/home/linuxbrew/.linuxbrew/bin"
 
-##NVIM_BIN
+##NVM_BIN
+set NVM_DIR "$HOME/.nvm"
+set NVM_DEFAULT_ALIAS $(cat "$NVM_DIR/alias/default")
+set NVM_BIN "$NVM_DIR/versions/node/v$NVM_DEFAULT_ALIAS/bin/"
 fish_add_path $NVM_BIN
 
 ##bun

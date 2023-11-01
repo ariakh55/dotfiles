@@ -1,17 +1,16 @@
 ## TMUX
+
+set -l excluded_terms 'vscode' 'kitty'
+
 if status is-interactive
-    if [ "$TERM_PROGRAM" = 'vscode' ]
-        echo "THIS IS VSCODE"
+    if string match -q "$TERM_PROGRAM" "$excluded_terms"
+        echo ""
     else if not set -q TMUX
         exec tmux
     end
 
     # Commands to run in interactive sessions can go here
 end
-
-
-## STARTUP
-node --version && clear
 
 ## ENV
 if [ -f $HOME/.config/fish/env/index.fish ]
