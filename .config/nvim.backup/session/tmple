@@ -1,0 +1,98 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Projects/KVE/src/Characters
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +1 ~/Projects/KVE/src/Core/NERD_tree_2
+badd +5 ~/Desktop/Projects/temple/svelte.config.js
+badd +32 ~/Desktop/Projects/temple/docker-compose.yml
+badd +1 ~/Desktop/Projects/temple/vite.config.ts
+badd +83 ~/Desktop/Projects/temple/node_modules/vitest/dist/config.d.ts
+badd +119 ~/Desktop/Projects/temple/node_modules/@sveltejs/kit/src/exports/vite/index.js
+badd +6 ~/Desktop/Projects/temple/yarn.lock
+badd +12 ~/Desktop/Projects/temple/package.json
+badd +1 ~/Desktop/Projects/temple/Dockerfile
+badd +29 ~/Desktop/Projects/temple/build/env.js
+badd +1 ~/Desktop/Projects/temple/build/handler.js
+badd +1 ~/Desktop/Projects/temple/build/server/index.js
+badd +13 ~/Desktop/Projects/temple/build/server/manifest.js
+badd +1 ~/Desktop/Projects/temple/build/.env
+badd +5 ~/Desktop/Projects/temple/src/routes/+page.svelte
+badd +11 ~/Desktop/Projects/temple/src/app.d.ts
+badd +22 ~/Desktop/Projects/temple/.env.dev
+badd +11 ~/Desktop/Projects/temple/.env
+badd +1 ~/Desktop/Projects/temple/.env.test
+badd +1 ~/Desktop/Projects/temple/docker-compose.dev.yml
+badd +1 ~/Desktop/Projects/temple/docker-compose.test.yml
+badd +1 ~/Desktop/Projects/temple/src/\[H\[J/home/sulfurchan/Desktop/Projects/temple/src/routes/+page.svelte
+badd +3 ~/Desktop/Projects/temple/playwright.config.ts
+badd +5 ~/Desktop/Projects/temple/.docker-configs/husky-prepare.cjs
+badd +5 ~/Desktop/Projects/temple/.docker-configs/.docker-configs/husky-prepare.cjs
+badd +32 ~/Desktop/Projects/temple/.husky/_/husky.sh
+badd +4 ~/Desktop/Projects/temple/.husky/pre-commit
+badd +3 ~/Desktop/Projects/temple/src/app.html
+badd +1 ~/Desktop/Projects/temple/src/error.html
+badd +14 ~/Desktop/Projects/temple/.dockerignore
+badd +1 ~/Projects/KVE/src/Core/schema.prisma
+badd +25 ~/Desktop/Projects/temple/.eslintrc.cjs
+badd +1 ~/Desktop/Projects/temple/.prettierrc
+badd +10 ~/Desktop/Projects/temple/.prettierignore
+badd +1 ~/Desktop/Projects/temple/.npmrc
+badd +15 ~/Desktop/Projects/temple/.eslintignore
+badd +6 ~/Desktop/Projects/temple/tsconfig.json
+badd +1 ~/Desktop/Projects/temple/tests/test.ts
+badd +5 ~/Desktop/Projects/temple/src/index.test.ts
+badd +11 ~/Desktop/Projects/temple/.gitignore
+badd +9 ~/Desktop/Projects/temple/README.md
+badd +7 ~/Desktop/Projects/temple/yarn-error.log
+badd +1 ~/Desktop/Projects/temple/static/favicon.png
+badd +1 ~/Projects/KVE/src/Core/NERD_tree_1
+argglobal
+%argdel
+edit ~/Projects/KVE/src/Core/schema.prisma
+argglobal
+balt ~/Desktop/Projects/temple/svelte.config.js
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+lcd ~/Projects/KVE/src/Core
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

@@ -6,7 +6,7 @@ if status is-interactive
     if string match -q "$TERM_PROGRAM" "$excluded_terms"
         echo ""
     else if not set -q TMUX
-        exec tmux
+        exec tmux new-session -A -s sulfur-main
     end
 
     # Commands to run in interactive sessions can go here
