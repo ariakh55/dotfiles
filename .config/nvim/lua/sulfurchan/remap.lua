@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<C-s>", ":w<CR>");
 vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>");
-vim.keymap.set("n", "<ESC>", ":nohl");
+vim.keymap.set("n", "<ESC>", ":noh<CR>", { slient = true });
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -46,8 +46,8 @@ vim.keymap.set("i", "<S-Tab>", "<C-d>")
 vim.keymap.set("v", "<S-Tab>", "<S-<>")
 vim.keymap.set("v", "<Tab>", "<S->>")
 
-vim.keymap.set("n", "<leader>bn", ":enew<CR>")
-vim.keymap.set("n", "<leader>bx", ":bd<CR>")
+vim.keymap.set("n", "<leader>bn", ":enew<CR>", { slient = true })
+vim.keymap.set("n", "<leader>bx", ":bd<CR>", { slient = true })
 
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
@@ -60,8 +60,8 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>")
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabclose<CR>")
 
-vim.keymap.set("n", "<leader>]", ":bnext<CR>")
-vim.keymap.set("n", "<leader>[", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>]", ":bnext<CR>", { slient = true })
+vim.keymap.set("n", "<leader>[", ":bprevious<CR>", { slient = true })
 
 vim.keymap.set("n", ")", vim.cmd.GitGutterNextHunk)
 vim.keymap.set("n", "(", vim.cmd.GitGutterPrevHunk)
