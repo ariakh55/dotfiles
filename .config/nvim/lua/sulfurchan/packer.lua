@@ -37,13 +37,13 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { 'ThePrimeagen/harpoon' }
+    use { 'ThePrimeagen/harpoon', branch = 'harpoon2', requires = { { "nvim-lua/plenary.nvim" } } }
 
     use { 'mbbill/undotree' }
 
     use { 'tpope/vim-fugitive' }
 
-    use { 'airblade/vim-gitgutter' }
+    use { 'lewis6991/gitsigns.nvim' }
 
     use { "terrortylor/nvim-comment" }
 
@@ -57,10 +57,10 @@ return require('packer').startup(function(use)
         end
     })
 
-     use {
-       "windwp/nvim-autopairs",
-       config = function() require("nvim-autopairs").setup {} end
-     }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
 
     use {
@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
 
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
+            { 'mattn/efm-langserver' },
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },

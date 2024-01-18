@@ -95,6 +95,16 @@ _G.packer_plugins = {
     path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["efm-langserver"] = {
+    loaded = true,
+    path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/efm-langserver",
+    url = "https://github.com/mattn/efm-langserver"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -186,11 +196,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/sulfurchan/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   }
 }
 
