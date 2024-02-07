@@ -9,6 +9,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'tsserver',
         'eslint',
+        'efm',
         'html',
         'jsonls',
         'clangd',

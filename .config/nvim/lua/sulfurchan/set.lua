@@ -40,6 +40,7 @@ vim.opt.splitbelow = true
 vim.opt.encoding = "UTF-8"
 
 vim.opt.cursorline = true
+vim.opt.guicursor = ""
 
 vim.opt.colorcolumn = "102";
 vim.opt.mouse = "a";

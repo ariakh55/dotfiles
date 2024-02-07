@@ -9,3 +9,6 @@ alias vim="nvim"
 
 ##bat
 alias bat="batcat"
+
+##vim config
+alias vimconfig="vim ~/.config/nvim"
