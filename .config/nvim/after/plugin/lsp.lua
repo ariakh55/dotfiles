@@ -9,7 +9,6 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'tsserver',
         'eslint',
-        'efm',
         'html',
         'jsonls',
         'clangd',
@@ -42,6 +41,7 @@ local prettierd = {
     },
 }
 
+
 require('lspconfig').efm.setup({
     init_options = {
         documentFormatting = true,
@@ -63,6 +63,7 @@ require('lspconfig').tsserver.setup({
         client.server_capabilities.documentFormattingRangeProvider = false
     end,
 })
+
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()

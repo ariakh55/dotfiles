@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     desc = "Auto-format javascript/typescript files after saving",
     callback = function()
         vim.lsp.buf.format()
+        vim.cmd("EslintFixAll")
     end,
     group = autocmd_group,
 })
