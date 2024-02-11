@@ -45,7 +45,10 @@ return require('packer').startup(function(use)
 
     use { 'lewis6991/gitsigns.nvim' }
 
-    use { "terrortylor/nvim-comment" }
+    use {
+        "terrortylor/nvim-comment",
+        requires = { 'JoosepAlviste/nvim-ts-context-commentstring' }
+    }
 
     use({
         "kylechui/nvim-surround",
