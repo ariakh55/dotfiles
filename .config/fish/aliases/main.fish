@@ -11,8 +11,8 @@ alias vim="nvim"
 alias bat="batcat"
 
 ##vim config
-set DOT_DIR "/home/sulfurchan/.dotconfig/"
-set DOT_WORK_TREE "/home/sulfurchan/"
+set DOT_DIR "$HOME/.dotconfig/"
+set DOT_WORK_TREE "$HOME"
 set CUSTOM_GIT "GIT_DIR=$DOT_DIR GIT_WORK_TREE=$DOT_WORK_TREE"
 
 alias vimconfig="$CUSTOM_GIT vim ~/.config/nvim"

@@ -1,5 +1,5 @@
 ##spicetify
-fish_add_path /home/sulfurchan/.spicetify
+fish_add_path $HOME/.spicetify
 
 ##linuxbrew
 fish_rm_path "/home/linuxbrew/.linuxbrew/bin" --slient
