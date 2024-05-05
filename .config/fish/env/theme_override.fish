@@ -1,0 +1,13 @@
+set -l hostcolor (set_color (uname -n | md5sum | cut -f1 -d' ' | tr -d '\n' | tail -c6))
+set -l normal (set_color normal)
+set -l white (set_color FFFFFF)
+set -l turquoise (set_color 5fdfff)
+# set -l orange (set_color df5f00)
+set -l orange (set_color f5c2e7)
+# set -l hotpink (set_color df005f)
+set -l hotpink (set_color cba6f7)
+set -l blue (set_color blue)
+set -l limegreen (set_color 87ff00)
+# set -l limegreen (set_color a6e3a1)
+set -l purple (set_color af5fff)
+
