@@ -52,6 +52,14 @@ require('lspconfig').efm.setup({
         languages = {
             javascript = { prettierd },
             typescript = { prettierd },
+        },
+        filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescript.tsx",
+            "typescriptreact"
         }
     }
 })

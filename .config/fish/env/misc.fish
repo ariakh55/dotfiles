@@ -1,3 +1,6 @@
+## FORCE SET NEOVIM AS THE EDITOR
+set --export EDITOR "/usr/bin/nvim"
+
 ##spicetify
 fish_add_path $HOME/.spicetify
 
