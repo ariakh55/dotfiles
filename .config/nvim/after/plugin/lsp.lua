@@ -1,5 +1,5 @@
 local lsp = require("lsp-zero")
-
+local lsp_config = require('lspconfig')
 lsp.preset("recommended")
 
 require('mason').setup({})
@@ -18,7 +18,7 @@ require('mason-lspconfig').setup({
         lsp.default_setup,
         lua_ls = function()
             local lua_opts = lsp.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
+            lsp_config.lua_ls.setup(lua_opts)
         end
     },
 })
@@ -42,7 +42,7 @@ local prettierd = {
 }
 
 
-require('lspconfig').efm.setup({
+lsp_config.efm.setup({
     init_options = {
         documentFormatting = true,
         documentRangeFormatting = true,
@@ -64,7 +64,7 @@ require('lspconfig').efm.setup({
     }
 })
 
-require('lspconfig').tsserver.setup({
+lsp_config.tsserver.setup({
     on_attach = function(client)
         -- disable tsserver as a formatter
         client.server_capabilities.documentFormattingProvider = false

@@ -1,3 +1,10 @@
+function fish_greeting
+    figlet -F metal -d /home/sulfurtop/.fonts/ -f isometric2 -w 100 SULFUR
+    echo "Welcome Sulfur-san to your machine!"
+    echo Time: (set_color yellow; date +%T; set_color normal) 
+end
+
+
 ## TMUX
 
 set -l excluded_terms 'vscode' 'kitty'
