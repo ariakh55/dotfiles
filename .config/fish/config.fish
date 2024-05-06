@@ -1,5 +1,5 @@
 function fish_greeting
-    figlet -F metal -d $HOME/.fonts/ -f isometric2 -w 100 SULFUR
+    figlet -d $HOME/.fonts/ -f isometric2 -w 100 SULFUR | lolcat
     echo "Welcome Sulfur-san to your machine!"
     echo Time: (set_color yellow; date +%T; set_color normal) 
 end
