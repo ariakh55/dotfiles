@@ -10,6 +10,9 @@ alias vim="nvim"
 ##bat
 alias bat="batcat"
 
+##better ll
+alias la="exa --icons -la --group-directories-first"
+
 ##vim config
 set DOT_DIR "$HOME/.dotconfig/"
 set DOT_WORK_TREE "$HOME"

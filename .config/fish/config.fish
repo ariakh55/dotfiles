@@ -1,5 +1,5 @@
 function fish_greeting
-    figlet -F metal -d /home/sulfurtop/.fonts/ -f isometric2 -w 100 SULFUR
+    figlet -F metal -d $HOME/.fonts/ -f isometric2 -w 100 SULFUR
     echo "Welcome Sulfur-san to your machine!"
     echo Time: (set_color yellow; date +%T; set_color normal) 
 end
@@ -29,4 +29,4 @@ end
 if [ -f $HOME/.config/fish/aliases/main.fish ]
     source $HOME/.config/fish/aliases/main.fish
 end
-alias dotconfig='/usr/bin/git --git-dir=/home/sulfurchan/.dotconfig/ --work-tree=/home/sulfurchan'
+alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
