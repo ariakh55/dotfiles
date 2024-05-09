@@ -25,8 +25,14 @@ if [ -f $HOME/.config/fish/env/index.fish ]
 end
 
 ## ALIAS
-#DO NOT REMOVE THE dotconfig
 if [ -f $HOME/.config/fish/aliases/main.fish ]
     source $HOME/.config/fish/aliases/main.fish
 end
+
+#DIRENV
+if command -q direnv
+    direnv hook fish | source
+end
+
+#DO NOT REMOVE THE dotconfig
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
