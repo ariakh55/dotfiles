@@ -13,7 +13,10 @@ Install these package using whatever package manager on your favorite distro
 - neovim
 - omf
 - ranger
-- emacs (config coming soos)
+- direnv (optional)
+- figlet
+- lolcat
+~~- emacs (config coming soos)~~
 
 then you need to make fish as your default login shell 
 [I didn't have the time to write it down so here you are **fish offical docs**](https://fishshell.com/docs/current/)
@@ -48,6 +51,17 @@ then using the created alias `dotconfig` checkout all configs
 ``` sh
 dotconfig checkout
 ```
+
+### Cool features
+I have added another script and some aliases
+
+```
+[alias]
+    dots = !git fetch dots && git rebase dots/master master
+    syncstage = !./scripts/stage_changes.sh
+```
+
+What will syncstage do is that you do need to manually get the dotfiles
 
 
 
