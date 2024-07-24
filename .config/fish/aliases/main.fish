@@ -6,6 +6,7 @@ alias cava="TERM=xterm-256color /usr/bin/cava"
 
 ##vim
 alias vim="nvim"
+alias godotvim="nvim --listen ./godothost"
 
 ##bat
 alias bat="batcat"

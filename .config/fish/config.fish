@@ -4,9 +4,7 @@ function fish_greeting
     echo Time: (set_color yellow; date +%T; set_color normal) 
 end
 
-
 ## TMUX
-
 set -l excluded_terms 'vscode' 'kitty'
 
 if status is-interactive
@@ -19,14 +17,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-## ENV
-if [ -f $HOME/.config/fish/env/index.fish ]
-    source $HOME/.config/fish/env/index.fish
-end
-
-## ALIAS
-if [ -f $HOME/.config/fish/aliases/main.fish ]
-    source $HOME/.config/fish/aliases/main.fish
+#ENV_ALIASES
+for f in (find $HOME/.config/fish/ -type f -name "*.fish" | grep -E 'env|aliases')
+    source $f
 end
 
 #DIRENV
