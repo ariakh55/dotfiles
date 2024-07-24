@@ -1,22 +1,34 @@
 # dotfiles
 
-Personal dotfiles for linux user **Sulfur Sashimi**
-This repo is inspired by [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial @atlassian!
+Personal dotfiles for linux user **Sulfur Sashimi** (you can fork it and use, I really appreciate the
+contributions). This repo is inspired by [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial @atlassian!
 
 ## Prerequisite
 Before using this dots there are simple things you need to do
 Install these package using whatever package manager on your favorite distro
-- tmux
-- fish shell
-- htop
-- neofetch
-- neovim
-- omf
-- ranger
-- direnv (optional)
-- figlet
-- lolcat
-~~- emacs (config coming soos)~~
+
+_But before doing anything else install `stow`_
+
+**Base packages**
+
+    - tmux
+    - fish shell
+    - neovim
+    - omf
+    - vlock
+
+**Utils**
+
+    - ranger
+    - htop
+    - direnv (optional)
+
+**Appearance**
+
+    - figlet
+    - lolcat
+
+- neofetch (RIP)
 
 then you need to make fish as your default login shell 
 [I didn't have the time to write it down so here you are **fish offical docs**](https://fishshell.com/docs/current/)
@@ -28,6 +40,7 @@ thanks me later
 There are two ways to use this repo: 
 1. Simple
 2. Simpler (LMAO)
+3. gnu stow
 
 ### Simple Way
 You just need to clone this repo
@@ -62,6 +75,3 @@ I have added another script and some aliases
 ```
 
 What will syncstage do is that you do need to manually get the dotfiles
-
-
-
