@@ -45,3 +45,11 @@ vim.opt.guicursor = ""
 vim.opt.colorcolumn = "102";
 vim.opt.mouse = "a";
 
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+
+-- highest foldlevel to avoid any distraction
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+
+vim.opt.foldnestmax = 4
