@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
         "catppuccin/nvim", as = "catppuccin",
     }
 
+    use { "ellisonleao/gruvbox.nvim" }
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons' }
@@ -45,10 +47,7 @@ return require('packer').startup(function(use)
 
     use { 'lewis6991/gitsigns.nvim' }
 
-    use {
-        "terrortylor/nvim-comment",
-        requires = { 'JoosepAlviste/nvim-ts-context-commentstring' }
-    }
+    use { "terrortylor/nvim-comment" }
 
     use({
         "kylechui/nvim-surround",

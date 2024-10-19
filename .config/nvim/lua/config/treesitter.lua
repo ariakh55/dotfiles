@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+return {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "javascript", "typescript", "c", "rust", "lua", "vimdoc", "query" },
 
@@ -19,8 +19,3 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
--- fold config
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-

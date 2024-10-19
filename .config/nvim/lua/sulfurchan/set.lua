@@ -50,6 +50,6 @@ vim.opt.foldtext = ""
 
 -- highest foldlevel to avoid any distraction
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 1
+vim.opt.foldlevelstart = 99
 
 vim.opt.foldnestmax = 4
