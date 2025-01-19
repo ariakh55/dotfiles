@@ -2,7 +2,9 @@ vim.g.mapleader = " "
 
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<C-s>", ":w<CR>");
+vim.keymap.set("n", "<C-S-s>", ":wa<CR>");
 vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>");
+vim.keymap.set("i", "<C-S-s>", "<ESC>:wa<CR>");
 vim.keymap.set("n", "<ESC>", ":noh<CR>", { silent = true });
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -24,13 +26,15 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
+vim.keymap.set("n", "<leader>fY", "<cmd>!echo \"%\" | xclip -i -selection clipboard<CR><CR>", { silent = true })
+
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -65,3 +69,5 @@ vim.keymap.set("n", "<leader>[", ":bprevious<CR>", { silent = true })
 
 vim.keymap.set("n", ")", vim.cmd.GitGutterNextHunk)
 vim.keymap.set("n", "(", vim.cmd.GitGutterPrevHunk)
+
+vim.keymap.set("n", "<leader>r", vim.cmd.Filename)
