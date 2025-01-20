@@ -1,0 +1,25 @@
+font-family = "MesloLGS NF"
+# font-family-bold = "MesloLGS NF Bold"
+# font-family-italic = "MesloLGS NF Italic"
+# font-family-bold-italic = "MesloLGS NF Bold Italic"
+
+font-size = 13
+cursor-style = "block"
+
+window-padding-y = 2,1
+window-decoration = false
+window-padding-balance = true
+confirm-close-surface = false
+
+shell-integration = fish
+theme = GruvboxDark
+
+adjust-cell-height = 0
+fullscreen = true
+window-vsync = true
+
+keybind = ctrl+enter=ignore
+keybind = ctrl+minus=ignore
+keybind = ctrl+equal=ignore
+
+keybind = ctrl+shift+f11=toggle_fullscreen
