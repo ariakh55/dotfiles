@@ -37,4 +37,33 @@ return {
         end,
         ft = { "markdown" }
     },
+    { 'wesQ3/vim-windowswap' },
+    {
+      'mistricky/codesnap.nvim',
+      build = 'make',
+      opts = {
+        code_font_family = "MesloLGS NF",
+        bg_theme         = "bamboo",
+        has_breadcrumbs  = true,
+        has_line_number  = true,
+        show_workspace   = false,
+      }
+    },
+    {
+      'stevearc/overseer.nvim',
+      event = "VeryLazy",
+      config = function()
+        require('overseer').setup({
+          templates = { "builtin" },
+        })
+      end,
+    },
+    {
+      'Vonr/align.nvim',
+      branch = "v2",
+      lazy = true,
+      init = function()
+        require('config.align')()
+      end
+    }
 }

@@ -21,3 +21,11 @@ set --export PATH $BUN_INSTALL/bin $PATH
 ##go 
 fish_add_path /usr/local/go/bin
 fish_add_path $HOME/go/bin/
+
+#deno
+set --export DENO_INSTALL $HOME/.deno
+fish_add_path $DENO_INSTALL/bin
+
+set --export VIMCONF "$HOME/.config/nvim/"
+
+set --export KUBECONF "$HOME/Projects/kubectl.conf"
