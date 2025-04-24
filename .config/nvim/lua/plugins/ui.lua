@@ -1,12 +1,14 @@
 return {
     {
-        "nvim-telescope/telescope.nvim", tag = "0.1.5",
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.5",
         config = function()
             require("config.telescope")()
         end
     },
     {
         "nvim-lualine/lualine.nvim",
+        event = 'VeryLazy',
         config = function()
             local config = require("config.lualine")
             require('lualine').setup(config)
@@ -18,7 +20,7 @@ return {
             require "alpha".setup(require "alpha.themes.startify".config)
         end
     },
-    { 
+    {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         config = function()

@@ -1,5 +1,6 @@
 local lsp_config = require('lspconfig')
 local prettierd = require("config.lsp.prettierd")
+local black = require("config.lsp.black")
 local nixpkgs_fmt = require("config.lsp.nixpkg")
 
 local config = {
@@ -8,21 +9,26 @@ local config = {
         documentRangeFormatting = true,
     },
     settings = {
-        rootMarkers = { '.git/' },
+        rootMarkers = { '.git' },
+        lintDebouce = true,
         languages = {
             javascript = { prettierd },
             typescript = { prettierd },
+            javascriptreact = { prettierd },
+            typescriptreact = { prettierd },
+            python = { black },
             nix = { nixpkgs_fmt },
         },
-        filetypes = {
-            "javascript",
-            "javascriptreact",
-            "javascript.jsx",
-            "typescript",
-            "typescript.tsx",
-            "typescriptreact",
-            "nix"
-        }
+    },
+    filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescript.tsx",
+        "typescriptreact",
+        "nix",
+        "python"
     }
 }
 

@@ -7,4 +7,5 @@ return {
     {"folke/tokyonight.nvim"},
     {"sainnhe/gruvbox-material"},
     {"scottmckendry/cyberdream.nvim"},
+    {"loctvl842/monokai-pro.nvim"},
 }

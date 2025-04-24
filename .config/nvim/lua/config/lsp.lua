@@ -1,20 +1,9 @@
 local lsp = require("lsp-zero")
 
 return function()
-    lsp.preset("recommended")
-
-    require("config.lsp.mason")()
-    require("config.lsp.efm")()
-    require("config.lsp.ts_ls")()
-    require("config.lsp.gdscript")()
-    require("config.lsp.phpactor")()
-    require("config.lsp.hls")()
-
-    require("config.lsp.cmp")()
-
-    lsp.set_preferences({
+    lsp.ui({
         suggest_lsp_servers = false,
-        sign_icons = {
+        sign_text = {
             error = 'E',
             warn = 'W',
             hint = 'H',
@@ -22,7 +11,7 @@ return function()
         }
     })
 
-    lsp.on_attach(function(_, bufnr)
+    local lsp_attach = function(_, bufnr)
         local opts = { buffer = bufnr, remap = false }
 
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -35,11 +24,24 @@ return function()
         vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-    end)
+    end
 
-    lsp.setup()
+    lsp.extend_lspconfig({
+        lsp_attach = lsp_attach,
+        float_border = 'rounded',
+        sign_text = true,
+    })
+
+    require("config.lsp.efm")()
+    require("config.lsp.ts_ls")()
+    require("config.lsp.gdscript")()
+    require("config.lsp.phpactor")()
+    require("config.lsp.hls")()
+    require("config.lsp.clangd")()
+
 
     vim.diagnostic.config({
         virtual_text = true
     })
+    vim.opt.signcolumn = 'yes'
 end

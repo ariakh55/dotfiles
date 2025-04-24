@@ -29,11 +29,12 @@ return {
             require("config.npairs")()
         end
     },
-    { "iamcco/markdown-preview.nvim", 
+    {
+        "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
-        setup = function() 
+        setup = function()
             vim.g.mkdp_filetypes = { "markdown" }
         end,
-        ft = { "markdown" } 
+        ft = { "markdown" }
     },
 }

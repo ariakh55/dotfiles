@@ -8,4 +8,10 @@ return function()
             client.server_capabilities.documentFormattingRangeProvider = false
         end,
     })
+
+    require('lspconfig').eslint.setup({
+        settings = {
+            rootMarkers = { '.git', 'package.json' }
+        }
+    })
 end

@@ -22,8 +22,12 @@ set DOT_DIR "$HOME/.dotconfig/"
 set DOT_WORK_TREE "$HOME"
 set CUSTOM_GIT "GIT_DIR=$DOT_DIR GIT_WORK_TREE=$DOT_WORK_TREE"
 
-alias vimconfig="$CUSTOM_GIT vim ~/.config/nvim"
-alias sshconfig="vim $HOME/.ssh/config"
-alias vidots="$CUSTOM_GIT vim $HOME"
+## Coocked something better "confedit"
+## go to functions
+# alias vimconfig="$CUSTOM_GIT vim ~/.config/nvim"
+# alias sshconfig="vim $HOME/.ssh/config"
+# alias vidots="$CUSTOM_GIT vim $HOME"
 
 alias supabase="npx supabase"
+alias wrangler="npx wrangler"
+alias wrangdev="npx wrangler --config=./wrangler.dev.toml"
