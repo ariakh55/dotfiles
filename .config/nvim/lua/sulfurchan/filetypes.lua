@@ -4,6 +4,7 @@ vim.filetype.add({
     },
     extension = {
         htmx = 'html',
-        tmpl = 'html'
+        tmpl = 'html',
+        htmldjango = 'html',
     }
 })
