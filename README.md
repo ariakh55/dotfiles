@@ -16,12 +16,15 @@ _But before doing anything else install `stow`_
     - neovim
     - omf
     - vlock
+    - ripgrep
+    - fzf
 
 **Utils**
 
     - ranger
     - htop
     - direnv (optional)
+    - gitmux (optional)
 
 **Appearance**
 
