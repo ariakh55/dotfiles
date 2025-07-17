@@ -17,6 +17,7 @@ theme = GruvboxDark
 adjust-cell-height = 0
 fullscreen = true
 window-vsync = true
+background-opacity = 0.9
 
 keybind = ctrl+enter=ignore
 keybind = ctrl+minus=ignore
