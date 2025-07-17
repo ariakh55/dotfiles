@@ -11,15 +11,16 @@ return {
         end,
         build = ":TSUpdate"
     },
+    -- LSP Support
+    { "neovim/nvim-lspconfig" },
     {
         "williamboman/mason.nvim",
+        tag = 'v1.11.0',
         config = function()
             require("config.lsp.mason")()
         end
     },
-    { "williamboman/mason-lspconfig.nvim" },
-    -- LSP Support
-    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason-lspconfig.nvim", tag = 'v1.32.0' },
     { "mfussenegger/nvim-jdtls" },
     {
         "hrsh7th/nvim-cmp",

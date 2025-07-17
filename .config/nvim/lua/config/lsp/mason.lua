@@ -12,7 +12,11 @@ return function()
             'html',
             'jsonls',
             'clangd',
-            'rust_analyzer'
+            'rust_analyzer',
+            'lua_ls'
+        },
+        automatic_enable = {
+            "lua_ls",
         },
         handlers = {
             lsp.default_setup,

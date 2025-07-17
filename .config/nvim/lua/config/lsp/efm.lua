@@ -2,6 +2,7 @@ local lsp_config = require('lspconfig')
 local prettierd = require("config.lsp.prettierd")
 local black = require("config.lsp.black")
 local nixpkgs_fmt = require("config.lsp.nixpkg")
+local clang_format = require("config.lsp.clang-format")
 
 local config = {
     init_options = {
@@ -18,6 +19,8 @@ local config = {
             typescriptreact = { prettierd },
             python = { black },
             nix = { nixpkgs_fmt },
+            c = { clang_format },
+            cpp = { clang_format },
         },
     },
     filetypes = {
@@ -28,7 +31,8 @@ local config = {
         "typescript.tsx",
         "typescriptreact",
         "nix",
-        "python"
+        "python",
+        "c", "cpp"
     }
 }
 
