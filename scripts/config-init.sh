@@ -21,6 +21,9 @@ then
   echo "/*" > $REPO/info/sparse-checkout
   echo "!README.md" >> $REPO/info/sparse-checkout
   echo "!scripts/" >> $REPO/info/sparse-checkout
+  echo "!icons/" >> $REPO/info/sparse-checkout
+  echo "!tmux-catppucin-status/" >> $REPO/info/sparse-checkout
+  echo "!wallpapers/" >> $REPO/info/sparse-checkout
   $ALIAS_CMD read-tree -mu HEAD
 
   echo "Repository cloned and configured with sparse-checkout."
