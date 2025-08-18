@@ -1,0 +1,5 @@
+@theme "gruvbox-dark-hard"
+
+window { width: 15%; height: 30%; }
+entry { enabled: false;}
+
