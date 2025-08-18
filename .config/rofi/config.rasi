@@ -11,6 +11,10 @@ configuration {
     display-window: "   Window";
     display-drun: "Apps";
     sidebar-mode: true;
+
+    window {
+        hide-active-window: true;
+    }
 }
 
 @theme "gruvbox-dark-hard"
