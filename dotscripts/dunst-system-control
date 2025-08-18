@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+ICON_VOLUME="audio-volume-high-symbolic-dark"
+ICON_MUTE="audio-volume-muted-symbolic-dark"
+ICON_BRIGHT="display-brightness-symbolic-dark"
+TIMEOUT="4000"
+URGENECY="normal"
+
+DUNST_PARAMS="-t $TIMEOUT -u $URGENECY"
+
+get_pactl_status() {
+    local cmd=${1:-get-sink-volume}
+    pactl "$cmd" @DEFAULT_SINK@ | xargs
+}
+
+get_current_volume() {
+    local sink_volume=$(get_pactl_status)
+    local params
+    while read -r params; do
+        [[ $params =~ [0-9]{1,3}% ]] && echo "${BASH_REMATCH[0]}"
+    done <<< "$sink_volume"
+}
+
+get_brightness() {
+    brightnessctl g
+}
+
+get_is_muted() {
+    local sink_mute=$(get_pactl_status get-sink-mute)
+    local is_muted=false
+    [[ $sink_mute =~ yes ]] && is_muted=true
+
+    echo "$is_muted"
+}
+
+send_volume_notif() {
+    local APPNAME="Volume"
+    local REPLACE_ID="2953"
+
+    local is_muted=$(get_is_muted)
+
+    if $is_muted ; then
+        dunstify $DUNST_PARAMS -a "$APPNAME" -r "$REPLACE_ID" -i "$ICON_MUTE" "Mute"
+    else
+        local volume=$(get_current_volume)
+        volume=${volume%\%}
+        
+        if ((volume > 100)); then
+            volume=100
+        fi
+
+        dunstify $DUNST_PARAMS -h int:value:"$volume" \
+            -a "$APPNAME" -r "$REPLACE_ID" -i "$ICON_VOLUME" "$volume"
+    fi
+}
+
+send_brightess_notif() {
+    local APPNAME="Brightness"
+    local REPLACE_ID="2954"
+
+    local brightness=$(get_brightness)
+
+    dunstify $DUNST_PARAMS -h int:value:"$brightness" \
+        -a "$APPNAME" -r "$REPLACE_ID" -i "$ICON_BRIGHT" "$brightness"
+}
+
+main() {
+    local opt=${1:-volume}
+
+    case "$opt" in 
+        volume) send_volume_notif ;;
+        brightness) send_brightess_notif ;;
+        *) echo "wtf!!" ;;
+    esac
+}
+
+main "$@"

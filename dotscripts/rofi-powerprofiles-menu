@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+PERFORMANCE_TEXT="Performance"
+BALANCED_TEXT="Balanced"
+POWER_SAVER_TEXT="Power saver"
+declare -A PROFILES
+PROFILES=()
+ORDER=()
+PROMPT="Power Profiles Daemon"
+EXIT_TEXT="Exit"
+
+MESG="Current profile: $(powerprofilesctl get)"
+ACTIVE="";
+
+get_profiles() {
+  PROFILES=(
+    ["$POWER_SAVER_TEXT"]="power-saver"
+    ["$BALANCED_TEXT"]="balanced"
+    ["$PERFORMANCE_TEXT"]="performance"
+  )
+
+  local profiles_list="$(powerprofilesctl list)"
+
+  if [[ "$profiles_list" == *"performance"* ]]; then
+    ORDER+=("$PERFORMANCE_TEXT")
+  fi
+
+  ORDER+=(
+    "$BALANCED_TEXT"
+    "$POWER_SAVER_TEXT"
+  )
+}
+
+get_active() {
+  local current=$(powerprofilesctl get)
+
+  for i in in ${!ORDER[@]}; do
+    if [ "${PROFILES["${ORDER["$i"]}"]}" = "$current" ]; then
+      ACTIVE=$((i+1))
+    fi
+  done
+}
+
+initialize() {
+  get_profiles
+  get_active
+}
+
+options() {
+  local accumulator=""
+  local keys=("${ORDER[@]}")
+
+  for key in "${keys[@]}"; do
+    if [ "$accumulator" = "" ]; then
+      accumulator="$key"
+      continue
+    fi
+    accumulator="$accumulator\n$key"
+  done
+  accumulator="${accumulator}\n${EXIT_TEXT}"
+  echo -e "$accumulator" 
+}
+
+run_cmd() {
+  local option="$1"
+  if [ "$option" = "" ] || [ "$option" = "$EXIT_TEXT" ]; then
+    exit 0
+  fi
+
+  powerprofilesctl set ${PROFILES["${option}"]}
+}
+
+main() {
+    local option=$1
+    
+    if [[ ! -z "$1" ]]; then
+        run_cmd ${option}
+
+        exit 0
+    fi
+    
+    echo -en "\x00prompt\x1f${PROMPT}\n"
+
+    options
+    echo -en "\x00active\x1f${ACTIVE}\n"
+}
+
+initialize
+main $@
+
