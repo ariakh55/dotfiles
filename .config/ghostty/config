@@ -3,6 +3,9 @@ font-family = "MesloLGS NF"
 # font-family-italic = "MesloLGS NF Italic"
 # font-family-bold-italic = "MesloLGS NF Bold Italic"
 
+shell-integration = fish
+theme = GruvboxDark
+
 font-size = 13
 cursor-style = "block"
 
@@ -11,13 +14,12 @@ window-decoration = false
 window-padding-balance = true
 confirm-close-surface = false
 
-shell-integration = fish
-theme = GruvboxDark
 
 adjust-cell-height = 0
-fullscreen = true
+fullscreen = false
 window-vsync = true
 background-opacity = 0.9
+title = "TERMINAL"
 
 keybind = ctrl+enter=ignore
 keybind = ctrl+minus=ignore
