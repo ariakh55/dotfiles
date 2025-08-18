@@ -1,5 +1,5 @@
 # Add apps which go under .config here
-set -U config_apps "nvim" "fish" "ghostty" "kitty"
+set -U config_apps "nvim" "fish" "ghostty" "kitty" "i3" "polybar" "rofi"
 
 # Add apps which has a different path here
 # and add the path to their array respectivly
