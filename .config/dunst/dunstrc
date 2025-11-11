@@ -50,7 +50,7 @@
     history_length = 20
 
     ### Misc ###
-    dmenu = /home/sulfurtop/.config/rofi/scripts/dunst-context
+    dmenu = ~/.config/rofi/scripts/dunst-context
     browser = /usr/bin/brave
     always_run_script = false
     title = Dunst

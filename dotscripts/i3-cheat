@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+I3_CONF=$(cat ~/.config/i3/config)
+KEYBIND_REGEX='^bind(code|sym)\s(\S*)\s(.*)'
+DESC_REGEX='^#\sdesc:\s(.*)'
+SECTION_START_REGEX='^#\sSECTION\s(.*)'
+
+FILE=/tmp/i3keys
+echo "" > $FILE
+
+main(){
+    printf "%-40s%-60s%s\n" "Key" "Description" "Action" >> $FILE
+
+    while read -r command; do
+        local comment key action line 
+
+        [[ "$command" =~ $SECTION_START_REGEX ]] && printf "\n===%s===\n" "${BASH_REMATCH[1]}" >> $FILE
+
+        if [[ "$command" =~ $DESC_REGEX ]]; then
+            comment=${BASH_REMATCH[1]}
+        fi
+
+        if [[ "$command" =~ $KEYBIND_REGEX ]]; then
+            line=${BASH_REMATCH[0]}
+            key=${BASH_REMATCH[2]}
+            action=${BASH_REMATCH[3]}
+
+            printf "%-40s%-60s%s\n" "$key" "$comment" "$action" >> $FILE
+
+            unset comment
+        fi
+    done <<< "$I3_CONF"
+
+    magick -size 8000x5000 xc:"#204B6F" \
+        -font "$HOME/.fonts/MesloLGSNerdFont-Regular.ttf" \
+        -pointsize 18 -fill "#FFD700" \
+        -annotate +20+20 @"$FILE" \
+        -trim -bordercolor "#204B6F" \
+        -border 20 +repage $FILE.png
+    
+    feh --no-menus --title "cheat" $FILE.png
+}
+
+main

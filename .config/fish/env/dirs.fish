@@ -9,7 +9,6 @@ set -x SP_DOCKER $SP_PROJX/docker-compose
 
 set -x SP_EXTERNAL /media/$USER/
 
-set -x KUBECONF $SP_PROJX/kubeconf.yaml
 set NVIM_CONFIG $SP_CONFIG/nvim
 set GLOBAL_NIX $HOME/.local/share/nix-apps/
 

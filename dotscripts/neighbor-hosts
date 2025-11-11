@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+NETBIOS_SCAN_CMD="nbtscan -e -t 200"
+NT_HOSTS="/etc/hosts.d/80-nthosts.conf"
+
+fatal() {
+	echo '[fatal]' "$@" >&2
+	exit 1
+}
+
+
+get_nt_hosts() {
+    local iprange=${1:-192.168.150.2-250}
+
+    printf "%s\n" "Scanning for netbios hosts in network..." >&2
+    $NETBIOS_SCAN_CMD $iprange
+}
+
+verbose_hostnames() {
+    local hosts=$(get_nt_hosts)
+
+    while read -r hostip; do
+        local hostname ip
+
+        read -r ip hostname <<< "$hostip"
+        echo "$hostname"
+    done <<< "$hosts"
+}
+
+write_to_hosts() {
+    [[ "$EUID" == 0 ]] || fatal 'This option requires evlevated access!'
+
+    local hosts=$(get_nt_hosts)
+    
+    echo "Writing NTHOSTS to $NT_HOSTS"
+    echo "$hosts" > $NT_HOSTS
+}
+
+main(){
+    local OPTIND opt
+    while getopts 'v w' opt; do
+        case "$opt" in
+            v) verbose_hostnames;;
+            w) write_to_hosts;;
+            *) fatal "Bad Option";;
+        esac
+    done
+}
+
+main "$@"

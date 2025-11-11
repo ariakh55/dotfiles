@@ -1,4 +1,6 @@
-# dotfiles
+# dotfiles (RIP)
+
+NOTICE: This repo is archived go to [dotfiles-v2](https://github.com/ariakh55/dotfiles-v2)
 
 Personal dotfiles for linux user **Sulfur Sashimi** (you can fork it and use, I really appreciate the
 contributions). This repo is inspired by [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial @atlassian!

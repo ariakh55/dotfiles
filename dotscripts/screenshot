@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+DEFAULT_PATH="$HOME/Pictures/Screenshots/"
+FILE_NAME_PREFIX="Screenshot from -"
+
+declare message=""
+declare actions=""
+declare file_name=""
+
+handle_notif_send() {
+        local action=$(dunstify -a "SCREENSHOT" -t 2000 -r 23 $actions \
+                -u low "$message"$'\n'"Type: $sc_type")
+
+        if [[ "$action" == "default" ]]; then
+                feh "$file_name"
+        fi 
+}
+
+take_screenshot(){
+        local sc_type=${1-full}
+        local selection=${2-disk}
+
+        file_name=`printf "$DEFAULT_PATH$FILE_NAME_PREFIX %(%Y-%m-%d %H-%M-%S)T.png"`
+        local options=""
+
+        [[ $sc_type == "window" ]] && options="--window $(xdotool getactivewindow) "
+        [[ $sc_type == "select" ]] && options="--select "
+
+        if [[ $selection == "clipboard" ]]; then
+                message="copied screenshot to clipboard"
+                maim $options | xclip -selection clipboard -t image/png
+        else
+                message="Saved screenshot to $file_name"
+                actions="-A default,OPEN"
+                maim $options "$file_name"
+        fi
+
+        handle_notif_send
+}
+
+
+take_screenshot "$@"
+
