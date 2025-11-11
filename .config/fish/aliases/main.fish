@@ -5,7 +5,9 @@ alias vimdiff="nvim -d"
 alias cava="TERM=xterm-256color /usr/bin/cava"
 
 ##vim
-alias vim="nvim"
+alias nvim-nightly="NVIM_PACK=1 command nvim-nightly"
+# alias vim="nvim"
+alias vim="nvim-nightly"
 alias godotvim="nvim --listen ./godothost"
 
 ##bat

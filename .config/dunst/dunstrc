@@ -86,6 +86,10 @@
     appname = "Calendar"
     history_ignore = true
 
+[ignore_screenshot]
+    appname = "SCREENSHOT"
+    history_ignore = true
+
 [ignore_sound]
     appname = "System Sound"
     history_ignore = true

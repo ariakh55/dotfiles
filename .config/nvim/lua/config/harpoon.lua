@@ -1,6 +1,6 @@
-return function()
-    local harpoon = require("harpoon")
+local harpoon = require("harpoon")
 
+return function()
     harpoon:setup()
 
     vim.keymap.set("n", "<leader>a", function () harpoon:list():add() end)

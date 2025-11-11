@@ -5,7 +5,7 @@ function fish_greeting
 end
 
 ## TMUX
-set -l excluded_terms 'vscode' 'kitty'
+set -l excluded_terms 'vscode' 'kitty' 'ghostty'
 
 if status is-interactive
     if string match -q "$TERM_PROGRAM" "$excluded_terms"
@@ -29,3 +29,4 @@ end
 
 #DO NOT REMOVE THE dotconfig
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotconfig/ --work-tree=$HOME'
+

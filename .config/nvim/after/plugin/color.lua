@@ -1,7 +1,7 @@
-require('catppuccin').setup({
-    flavor = "mocha",
-    transparent_background = false
-})
+-- require('catppuccin').setup({
+--     flavor = "mocha",
+--     transparent_background = false
+-- })
 
 require('monokai-pro').setup({
     devicons = true,

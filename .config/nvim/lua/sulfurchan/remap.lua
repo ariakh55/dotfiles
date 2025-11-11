@@ -28,9 +28,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<leader>fY", "<cmd>!echo \"%\" | xclip -i -selection clipboard<CR><CR>", { silent = true })
 
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tms<CR>")
 vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format()
+        vim.lsp.buf.format()
 end)
 
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>zz")
@@ -41,6 +41,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>m", [[:make<CR>]], { silent = true })
+vim.keymap.set("n", "<leader>cm", [[:new | 0read !]])
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)

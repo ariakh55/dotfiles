@@ -3,8 +3,9 @@ font-family = "MesloLGS NF"
 # font-family-italic = "MesloLGS NF Italic"
 # font-family-bold-italic = "MesloLGS NF Bold Italic"
 
-shell-integration = fish
-theme = GruvboxDark
+shell-integration = bash
+theme = Gruvbox Dark
+# theme = Lovelace
 
 font-size = 13
 cursor-style = "block"
@@ -21,8 +22,8 @@ window-vsync = true
 background-opacity = 0.9
 title = "TERMINAL"
 
+# bell-features=border
+
 keybind = ctrl+enter=ignore
-keybind = ctrl+minus=ignore
-keybind = ctrl+equal=ignore
 
 keybind = ctrl+shift+f11=toggle_fullscreen

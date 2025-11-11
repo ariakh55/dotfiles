@@ -11,4 +11,9 @@ require("sulfurchan.addons")
 require("sulfurchan.filetypes")
 
 -- plugin manager
-require("sulfurchan.lazy")
+local builtin_pack = os.getenv("NVIM_PACK")
+if builtin_pack  then
+    require("sulfurchan.pack")
+else
+    require("sulfurchan.lazy")
+end

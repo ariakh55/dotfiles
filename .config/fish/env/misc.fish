@@ -29,3 +29,6 @@ fish_add_path $DENO_INSTALL/bin
 set --export VIMCONF "$HOME/.config/nvim/"
 
 set --export KUBECONF "$HOME/Projects/kubectl.conf"
+
+# opencode
+fish_add_path /home/sulfurtop/.opencode/bin

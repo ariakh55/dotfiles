@@ -1,6 +1,9 @@
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-require("luasnip.loaders.from_vscode").lazy_load()
+
+if not os.getenv('NVIM_PACK') then
+    require("luasnip.loaders.from_vscode").lazy_load()
+end
 
 local kind_icons = {
   Text = "",

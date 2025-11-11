@@ -1,0 +1,37 @@
+    ● nvim-treesitter 7.31ms  start
+    "nvim-treesitter/nvim-treesitter",
+    ● nvim-lspconfig 7.14ms 󰢱 lspconfig.configs  lsp-zero.nvim
+    "neovim/nvim-lspconfig",
+    ● mason.nvim 26.6ms  start
+    "williamboman/mason.nvim",
+    ● mason-lspconfig.nvim 0.08ms 󰢱 mason-lspconfig  mason.nvim
+    "williamboman/mason-lspconfig.nvim",
+    ● nvim-cmp 25.58ms  start
+    "hrsh7th/nvim-cmp",
+    ● cmp-nvim-lsp 0.4ms  nvim-cmp
+    "hrsh7th/cmp-nvim-lsp",
+    ● lsp-zero.nvim 11.1ms 󰢱 lsp-zero  mason.nvim
+    "VonHeikemen/lsp-zero.nvim",
+
+    ● telescope.nvim 0.91ms  start
+    ● harpoon 3.97ms  start
+    ● plenary.nvim 0.14ms 󰢱 plenary.path  harpoon
+    ● nvim-web-devicons 0.37ms  start
+
+    ● vim-fugitive 1.06ms  start
+    ● gitsigns.nvim 2.22ms  start
+    ● undotree 0.51ms  start
+
+    ● monokai-pro.nvim 0.28ms  start
+    ● lualine.nvim 6.21ms  VeryLazy
+
+    ● nvim-autopairs 1.74ms  start
+    ● nvim-comment 0.72ms  start
+    ● nvim-surround 1.44ms  VeryLazy
+    ● vim-windowswap 0.45ms  start
+
+    ● nvim-tmux-navigation 0.66ms  start
+
+  Not Loaded (5)
+    ○ align.nvim 
+
